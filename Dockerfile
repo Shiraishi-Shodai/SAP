@@ -38,6 +38,11 @@ RUN zypper install -y unrar
 # ラインセンスの説明を抜けるための環境変数をセット
 # export PAGER=cat
 
+# uuiddを立ち上げる
+# mkdir -p /run/uuidd
+# /usr/sbin/uuidd
+# ps -ef | grep '[u]uidd'
+
 # install実行
 # aseのセットアップを抜けるためにinstall.shを改造したcp_install.shを実行
 # https://community.sap.com/t5/technology-blog-posts-by-members/adjusting-installer-script-for-sap-netweaver-dev-edition-for-distros-with/ba-p/13492318
@@ -45,7 +50,11 @@ RUN zypper install -y unrar
 # 途中で設定するASEのmasterパスワードは英数字(大文字小文字含む)で8文字以上(例: shotadaYo91)
 # ./cp_install.sh
 
-# sapstart all
+# su npladm
+# startsap all
 
 # sapを止める
-# sapcontrol -nr 00 -function Stop
+# stopsap all
+
+# エラー
+# /tmp/sapinst_instdir
