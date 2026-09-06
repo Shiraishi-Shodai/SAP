@@ -1,0 +1,17 @@
+docker run -it --name opensuse15.6 opensuse/leap:15.6 /bin/bash
+
+docker compose up -d --build
+# すべてのコンテナ削除
+docker rm -f $(docker ps -a -q)
+
+# コンテナログイン
+docker compose exec app /bin/bash
+# サービスを確認
+docker compose config --services
+# config確認
+docker compose config
+# コンテナを停止し、コンテナ、イメージ、ボリュームを削除する
+docker compose down
+# リソース確認
+docker stats
+

@@ -1,0 +1,20 @@
+# version: '3.8'
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    # 標準入力を開いたままにする
+    stdin_open: true
+    hostname: vhcalnplci
+
+    # 仮想端末を割り当てる
+    tty: true
+    volumes:
+      - ../SAP:/volume_dir
+    ports:
+      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:44300:44300"
+      - "127.0.0.1:3300:3300"
+      - "127.0.0.1:3200:3200"
