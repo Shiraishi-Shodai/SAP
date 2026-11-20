@@ -16,6 +16,6 @@ docker compose down
 docker stats
 
 # stop
-docker stop 5ff078188969
+docker stop dockersuse-app-1
 # start
-docker start 5ff078188969
+docker start dockersuse-app-1

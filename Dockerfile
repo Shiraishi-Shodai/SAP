@@ -34,6 +34,9 @@ RUN zypper install -y unrar
 
 # 必要であれば(元のインストール済みディレクトリを削除)
 # rm -r /sybase /usr/sap /sapmnt
+# 必要であれば(sapstarttsrvのプロセスが起動しているか確認。起動中であれば落とす。install中のSAPへの接続でエラーとなる場合あり。)
+# ps -ef | grep -E "sapstartsrv|disp\+work"
+# kill processNo
 
 # ラインセンスの説明を抜けるための環境変数をセット
 # export PAGER=cat
